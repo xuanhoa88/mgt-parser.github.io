@@ -1,0 +1,42 @@
+{
+  "name": "tree-sitter-playground",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "serve": "14.2.0",
+    "tree-sitter-c-sharp": "0.20.0",
+    "tree-sitter-cli": "0.20.6",
+    "tree-sitter-java": "0.19.1",
+    "tree-sitter-javascript": "0.19.0",
+    "tree-sitter-kotlin": "0.2.11",
+    "tree-sitter-swift": "0.3.6"
+  },
+  "dependencies": {
+    "web-tree-sitter": "0.20.5"
+  },
+  "scripts": {
+    "build:wasm": "tree-sitter build-wasm",
+    "start": "serve"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "browser": {
+    "fs": false,
+    "os": false,
+    "path": false
+  },
+  "description": "This repository is inspired by [[https://github.com/aspeddro/tree-sitter-rescript-web-playground][aspeddro/tree-sitter-rescript-web-playground]]",
+  "main": "playground.js",
+  "author": "",
+  "license": "ISC"
+}
