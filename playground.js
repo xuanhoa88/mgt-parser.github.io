@@ -234,11 +234,10 @@
   async function handleLanguageChange() {
     const newLanguageName = languageSelect.value;
 
-    if (!languagesByName[newLanguageName]) {
-      const url = `${LANGUAGE_BASE_URL}/tree-sitter-${newLanguageName}.wasm`;
+    if (newLanguageName && !languagesByName[newLanguageName]) {
       languageSelect.disabled = true;
       try {
-        languagesByName[newLanguageName] = await TreeSitter.Language.load(url);
+        languagesByName[newLanguageName] = await TreeSitter.Language.load(`./tree-sitter-${newLanguageName}.wasm`);
       } catch (e) {
         return;
       } finally {
