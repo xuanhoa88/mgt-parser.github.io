@@ -3,63 +3,14 @@
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
   <meta charset="utf-8" />
-  <title>tree-sitter org-mode</title>
+  <title>Syntax Tree Playground</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.45.0/codemirror.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/clusterize.js/0.18.0/clusterize.min.css" />
-</head>
+  <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
+  <link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
 
-<body>
-  <div id="playground-container">
-    <header>
-      <div class="header-item">
-        <label for="language-select">Code</label>
-        <select id="language-select">
-          <option value="csharp">C#</option>
-          <option value="java">Java</option>
-          <option value="kotlin">Kotlin</option>
-          <option value="swift">Swift</option>
-        </select>
-      </div>
 
-      <div class="header-item">
-        <label for="logging-checkbox">log</label>
-        <input id="logging-checkbox" type="checkbox" />
-      </div>
-
-      <div class="header-item">
-        <label for="query-checkbox">query</label>
-        <input id="query-checkbox" type="checkbox" />
-      </div>
-
-      <div class="header-item">
-        <label for="update-time">parse time: </label>
-        <span id="update-time">... ms</span>
-      </div>
-    </header>
-
-    <main>
-      <div id="input-pane">
-        <div id="code-container"></div>
-        <div id="query-container"></div>
-      </div>
-
-      <div id="output-container-scroll">
-        <pre id="output-container" class="highlight" tabindex="0">
-          <div></div>
-        </pre>
-      </div>
-    </main>
-  </div>
-
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/clike/clike.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/swift/swift.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/clusterize.js/0.18.0/clusterize.min.js"></script>
-  <script src="./tree-sitter.js"></script>
-  <script src="./playground.js"></script>
-
-  <style>
+  <style type="text/css">
     body {
       margin: 0;
       padding: 0;
@@ -149,7 +100,7 @@
 
     a {
       text-decoration: none;
-      color: #040404;
+      color: #1e6bb8;
       padding: 2px;
     }
 
@@ -189,6 +140,58 @@
       -webkit-user-select: none;
     }
   </style>
+</head>
+
+<body>
+  <div id="playground-container">
+    <header>
+      <div class="header-item">
+        <label for="language-select">Language</label>
+        <select id="language-select">
+          <option value="csharp" selected="selected">C#</option>
+          <option value="java">Java</option>
+          <option value="kotlin">Kotlin</option>
+          <option value="swift">Swift</option>
+        </select>
+      </div>
+
+      <div class="header-item">
+        <label for="logging-checkbox">Log</label>
+        <input id="logging-checkbox" type="checkbox" />
+      </div>
+
+      <div class="header-item">
+        <label for="query-checkbox">Query</label>
+        <input id="query-checkbox" type="checkbox" />
+      </div>
+
+      <div class="header-item">
+        <label for="update-time">Execution time:</label>
+        <span id="update-time">... ms</span>
+      </div>
+    </header>
+
+    <main>
+      <div id="input-pane">
+        <div id="code-container"></div>
+        <div id="query-container"></div>
+      </div>
+
+      <div id="output-container-scroll">
+        <pre id="output-container" class="highlight" tabindex="0">
+          <div></div>
+        </pre>
+      </div>
+    </main>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/clike/clike.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.13/mode/swift/swift.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clusterize.js/0.18.0/clusterize.min.js"></script>
+  <script src="./tree-sitter.js"></script>
+  <script src="./playground.js"></script>
 </body>
 
 </html>

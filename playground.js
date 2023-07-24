@@ -234,10 +234,12 @@
   async function handleLanguageChange() {
     const newLanguageName = languageSelect.value;
 
-    if (newLanguageName && !languagesByName[newLanguageName]) {
+    if (!languagesByName[newLanguageName]) {
       languageSelect.disabled = true;
       try {
-        languagesByName[newLanguageName] = await TreeSitter.Language.load(`./tree-sitter-${newLanguageName}.wasm`);
+        languagesByName[newLanguageName] = await TreeSitter.Language.load(
+          `./tree-sitter-${newLanguageName}.wasm`
+        );
       } catch (e) {
         return;
       } finally {
@@ -474,7 +476,7 @@
   }
 
   function handleCursorMovement() {
-    if (isRendering > 0) return;
+    if (isRendering) return;
 
     const selection = codeEditor.getDoc().listSelections()[0];
     let start = { row: selection.anchor.line, column: selection.anchor.ch };
