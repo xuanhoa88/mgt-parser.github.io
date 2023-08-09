@@ -1,17 +1,16 @@
 (async () => {
   let tree;
   let codeInput = `using System;
-
-  namespace HelloWorld
+namespace HelloWorld
+{
+  class Program
   {
-    class Program
+    static void Main(string[] args)
     {
-      static void Main(string[] args)
-      {
-        Console.WriteLine("Hello World!");    
-      }
+      Console.WriteLine("Hello World!");
     }
-  }`;
+  }
+}`;
   let queryInput = `
 ; A Note on anonymous nodes (represented in a query file as strings). As of
 ; right now, anonymous nodes can not be anchored.
@@ -331,8 +330,8 @@
             finishedRow = false;
           }
 
-          const startIndex = cursor.startIndex;
-          const endIndex = cursor.endIndex;
+          const startIndex = cursor.endIndex - cursor.nodeText.length;
+          const endIndex = cursor.endIndex + 1;
           const startPosition = cursor.startPosition;
           const endPosition = cursor.endPosition;
           const nodeId = cursor.nodeId;
