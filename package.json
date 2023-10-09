@@ -1,10 +1,10 @@
 {
-  "name": "tree-sitter-playground",
+  "name": "plexgram-playground",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
     "serve": "14.2.0",
-    "tree-sitter-cli": "0.20.8"
+    "tree-sitter-cli": "0.20.6"
   },
   "dependencies": {
     "web-tree-sitter": "0.20.8"
