@@ -4,7 +4,7 @@
   "private": true,
   "devDependencies": {
     "serve": "14.2.0",
-    "tree-sitter-cli": "0.20.6"
+    "tree-sitter-cli": "0.20.8"
   },
   "dependencies": {
     "web-tree-sitter": "0.20.8"
